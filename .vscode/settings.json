@@ -1,0 +1,6 @@
+{
+  "rust-analyzer.linkedProjects": [
+    "rust_file_compressor/Cargo.toml",
+    "rust_csv/Cargo.toml"
+  ]
+}
