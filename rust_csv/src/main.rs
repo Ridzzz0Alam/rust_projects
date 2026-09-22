@@ -3,7 +3,7 @@ use std::error::Error;
 use csv;
 
 fn read_from_file(path: &str) -> Result<(), Box<dyn Error>>{
-    let mut reader = csv::Reader::from_path(path)?;
+    let mut reader = csv::ReaderBuilder::new().has_headers(false).from_path(path)?;
 
     for result in reader.records(){
         let record = result?;
@@ -14,7 +14,7 @@ fn read_from_file(path: &str) -> Result<(), Box<dyn Error>>{
 }
 
 fn main(){
-    if let Err(e) = read_from_file("./rust_csv/customers.csv"){
+    if let Err(e) = read_from_file("customers.csv"){
         eprintln!("{}", e);
     }
 }
