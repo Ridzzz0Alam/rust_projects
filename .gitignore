@@ -1,0 +1,5 @@
+# Cargo build output (any project folder)
+target/
+
+# Shared build cache (see .cargo/config.toml)
+.build/
